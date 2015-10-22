@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+ 	<head>
+ 		<title>Ryan's github issues</title>title>
+  	</head>
+  		<h3>Issues</h3>
+
+
+  		<ul class="issues">
+  			<% results.each do |result| %>
+  			   <%if result[:state]== "closed" 
+  				  reopen
+  				else
+  				  close
+  				end	
+  			  %>
+
+  			  <form action="issue/close<%result.id%>"method="post">
+
+
+
+
+
+
+<body>
+</html>
+  			
+
+  					<% 
