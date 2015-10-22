@@ -1,0 +1,29 @@
+ul {
+	color:black;
+	list-style-type:none;
+
+}
+
+form input[type="submit"] {
+	color:red;
+}
+
+form {
+	color:black;
+}
+
+li a {
+	color:black;
+}
+
+input {
+	color:black;
+}
+
+body {
+	background-color:grey;
+}
+
+a {
+	text-decoration:none;
+}

@@ -10,8 +10,9 @@ module Myhub
       }
     end
 
-    def get_issues(owner, repo, options={})    # GET /repos/:owner/:repo/issues
-    issues = Github.get("/repos/#{owner}/#{repo}/issues", :headers => @headers, :body options)
+    def get_issues(owner, repo, options={})    # GET /repos/:owner/:repo/issues    assignee 
+    issues = Github.get("/repos/#{owner}/#{repo}/issues", :headers => @headers, :query => options)
+    map = issues.map {|issue| {id: issue["number"], title: issue["title"], url: issue["html_url"], state: issue["state"]} }
     end
         # Enumerate each, map... need to drill down and hand back options 
     

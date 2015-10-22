@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html>
  	<head>
- 		<title>Ryan's github issues</title>title>
+ 		<title>Ryan's github issues</title>
+ 		<link rel="stylesheet" href="main.css"
   	</head>
-  		<h3>Issues</h3>
+  		<h3>Ryan's Github Issues</h3>
 
 
   		<ul class="issues">
   			<% results.each do |result| %>
-  			   <%if result[:state]== "closed" 
-  				  reopen
-  				else
-  				  close
-  				end	
-  			  %>
-
-  			  <form action="issue/close<%result.id%>"method="post">
-
-
-
-
-
-
+  			
+  			<li>
+  			<a href="<%= result[:url] %>"><%= result[:title]%> </a>
+  			<%if result[:state]== "open" %>
+  				<form action="/issue/close/<%= result[:id]%>" method="post">
+  				<input type="submit" value="Close Issue">
+  				</form>
+ 				<% else %>
+  				<form action="/issue/reopen/<%= result[:id]%>" method="post"> 
+  				<input type="submit" value="Reopen Issue">
+  				</form>
+  				<% end%>
+  			<%end%>
+  		</li>
+  	</ul>		
 <body>
 </html>
   			
 
-  					<% 
+  					
