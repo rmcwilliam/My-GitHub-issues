@@ -6,7 +6,7 @@ require "myhub/version"
 require "myhub/github"
 
 
-module Myhub                  # Server / controller 
+module Myhub                 
   class App < Sinatra::Base
     set :logging, true
 
@@ -16,21 +16,18 @@ module Myhub                  # Server / controller
       erb :index, locals: {results: results}
     end
 
-    post "/issue/reopen/:id" do    # owner, repo
+    post "/issue/reopen/:id" do   
       api = Github.new
       api.reopen_issue("TIY-ATL-ROR-2015-Sep","assignments",params["id"].to_i)
       "It's open"
     end
 
-    post "/issue/close/:id" do      # owner, repo
+    post "/issue/close/:id" do     
       api = Github.new
       api.close_issue("TIY-ATL-ROR-2015-Sep","assignments",params["id"].to_i)
       "It's closed"
     end
-#binding.pry
     run! if app_file == $0
   end
-
 end
 
-# when I start the application do ->  AUTH_TOKEN=your_auth_token_here bundle exec ruby lib/myhub.rb     Sets auth token ENV
