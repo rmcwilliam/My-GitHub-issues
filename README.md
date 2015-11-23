@@ -1,6 +1,6 @@
 #**My Hub**
 
-This is a simple program written using Sinatra and HTTParty to make http requests via the [github api](https://api.github.com) to retrieve and or manipulate an owners repository related issues. 
+This is a simple program using Sinatra and HTTParty to make http requests via the [github api](https://developer.github.com/v3/) to retrieve and or manipulate github issues. 
 
 ##**Example**
 ```
